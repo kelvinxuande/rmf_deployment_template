@@ -148,22 +148,16 @@ kubectl get certificates # should be true, might need to wait a minute
 #### Port-forwarding via SSH
 Note: To cater to the non-SSL visit in this section (for testing only), enable port 80 http on Security Group
 ```
-# modified the following
-# Start a new ssh session with port forward 9090 to the VM, you should now be able to view the admin panel on port localhost:9090
-# https://blog.alexellis.io/primer-accessing-kubernetes-services/
-# https://github.com/oracle-devrel/devo.tutorials/blob/main/deploying-the-argo-project-on-oke.md
-# kubectl port-forward svc/argocd-server -n argocd 9090:443
-
 # Get the initial password
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 
 # keep open
-kubectl port-forward --address 0.0.0.0 svc/argocd-server -n argocd 8080:443
+kubectl port-forward svc/argocd-server -n argocd 9090:443
 
 # open a new terminal and SSH to instance 
-ssh -i siot_test-rmf_ec2-keypair.pem -L 8080:localhost:8080 ubuntu@<insert-ip>
+ssh -i siot_test-rmf_ec2-keypair.pem -L 9090:localhost:9090 ubuntu@<insert-ip>
 ```
-On browser, visit localhost:8080 with `admin` username and password acquired above.
+On browser, visit localhost:9090 with `admin` username and password acquired above.
 
 #### argoCD setup
 - Connect the repository. View the docs to learn how to configure ArgoCD
