@@ -172,6 +172,7 @@ Now if you sync the app, we should see the full deployment "come alive".
 Note that for this particular repository/ branch; keycloak has been omitted
 ```
 cd infrastructure
-./keycloak-setup.bash rmf-deployment-template.open-rmf.org 
+# ./keycloak-setup.bash rmf-deployment-template.open-rmf.org
+./keycloak-setup.bash test-app-domain.com
 ```
-RMF web dashboard will now be accessible on your_url/dashboard (eg. rmf.open-rmf.org/dashboard); users can be manage via your_url/auth (eg. rmf.open-rmf.org/auth)
+RMF web dashboard will now be accessible on your_url/dashboard (eg. rmf.open-rmf.org/dashboard); users can be manage via your_url/auth (eg. rmf.open-rmf.org/auth). In this case, use `test-app-domain.com/dashboard` and `test-app-domain.com/auth`
