@@ -1,7 +1,7 @@
 
 replicas: 1
-registryUrl: ghcr.io/kelvinxuande
-builder_ns: ghcr.io/kelvinxuande/rmf_deployment_template
+registryUrl: ghcr.io/open-rmf
+builder_ns: ghcr.io/open-rmf/rmf_deployment_template
 hostName: test-app-domain.com
 
 global:
