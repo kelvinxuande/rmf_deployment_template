@@ -1,8 +1,8 @@
 
 replicas: 1
-registryUrl: ghcr.io/open-rmf
-builder_ns: ghcr.io/open-rmf/rmf_deployment_template
-hostName: rmf-deployment-template.open-rmf.org
+registryUrl: ghcr.io/kelvinxuande
+builder_ns: ghcr.io/kelvinxuande/rmf_deployment_template
+hostName: test-app-domain.com
 
 global:
   ROS_DOMAIN_ID: 15
