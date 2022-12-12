@@ -139,6 +139,8 @@ kubectl apply -f https://github.com/jetstack/cert-manager/releases/latest/downlo
 kubectl wait --for=condition=available deployment/cert-manager -n cert-manager --timeout=2m
 
 # NOTE: Specify your `ACME_EMAIL` and `DOMAIN_NAME` for letsencrypt-issuer-production
+# test-app-domain.com
+# kelvinxuande@gmail.com
 export DOMAIN_NAME=rmf-deployment-template.open-rmf.org
 export ACME_EMAIL=YOUREMAIL@DOMAIN.com
 envsubst < infrastructure/cert-manager/letsencrypt-issuer-production.yaml | kubectl apply -f -
