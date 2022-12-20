@@ -37,6 +37,9 @@ Useful references:
 - [Amazon EC2 Basics & Instances Tutorial](https://www.youtube.com/watch?v=iHX-jtKIVNA)
 - [SSH to EC2 Instances using Linux or Mac Tutorial](https://www.youtube.com/watch?v=8UqtMcX_kg0)
 
+## Remember to target the VM Public IP v4 address with domain URL in DNS Records
+    - E.g. Route 53 > Hosted zones > test-app-domain.com
+
 ## Do the following locally
 
 #### Set up SSH
