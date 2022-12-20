@@ -125,13 +125,6 @@ kubectl get svc ingress-nginx-controller -n ingress-nginx -o jsonpath="{.status.
 kubectl get pod -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,NODE:.spec.nodeName --all-namespaces
 ```
 
-#### Setup and apply argoCD Deployment
-```
-kubectl create namespace argocd
-kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-kubectl create namespace deploy
-```
-
 #### Setup SSL Certificates
 ```
 kubectl create namespace cert-manager
@@ -145,6 +138,13 @@ export DOMAIN_NAME=rmf-deployment-template.open-rmf.org
 export ACME_EMAIL=YOUREMAIL@DOMAIN.com
 envsubst < infrastructure/cert-manager/letsencrypt-issuer-production.yaml | kubectl apply -f -
 kubectl get certificates # should be true, might need to wait a minute
+```
+
+#### Setup and apply argoCD Deployment
+```
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+kubectl create namespace deploy
 ```
 
 #### Port-forwarding via SSH
