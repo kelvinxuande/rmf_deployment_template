@@ -141,6 +141,7 @@ export DOMAIN_NAME=rmf-deployment-template.open-rmf.org
 export ACME_EMAIL=YOUREMAIL@DOMAIN.com
 envsubst < infrastructure/cert-manager/letsencrypt-issuer-production.yaml | kubectl apply -f -
 kubectl get certificates # should be true, might need to wait a minute
+# if it remains false i.e. after 3-5 mins, check that the VM Public IP v4 address is targetted with domain URL in DNS Records
 ```
 
 #### Setup and apply argoCD Deployment
